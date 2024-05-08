@@ -1,0 +1,26 @@
+*Ætla að nota SetFitABSA model sem er "few-shot" og ætti ekki að þurfa allt of mikið af training data (?)
+
+*Aspect granularity - Þarf að experimenta:
+Fine-Grained Aspects: These correspond to specific nouns or noun phrases directly mentioned in the text. For instance, in your example sentence “Restaurant with wonderful food but worst service I ever seen,” the fine-grained aspect is “food.”
+
+Coarse-Grained Aspects: These are broader categories that encompass multiple related aspects. For example, “Game feel” or “Combat” could be considered coarse-grained aspects.
+
+Consider a hybrid approach:
+Use fine-grained aspects for specific details (e.g., “animations,” “recoil,” etc.).
+Also include coarse-grained aspects to capture overall themes (e.g., “Game feel,” “Combat,” etc.).
+Label both fine-grained and coarse-grained aspects with sentiments.
+
+
+ **************  TODO ****************
+
+* Class division of hátt (pos vs neg), annaðhvort taka sample sem er hlutfallslega jafnara eða
+nota PyTorch WeightedRandomSampler (og BERT): https://medium.com/@Mirza_Yusuf/using-a-bert-model-for-sentiment-analysis-6c6fcc106843
+
+* Nota líkan til að spá fyrir um aðra hluti: 
+- Ef playtime er ofan eða neðan avg, er pos eða neg?
+- from_json: num_reviews, games_owned, weighted_vote_score(?)
+
+* GPU usage limited í Colab, þjálfa model með stærra sample 25k -> 100k -> meira?
+* þarft að búa til sér env í conda með réttu versions til að nota GPU með tensorflow: sjá https://www.tensorflow.org/install/source_windows#gpu
+
+!!!! OG SAVE-A MODELIÐ !!!

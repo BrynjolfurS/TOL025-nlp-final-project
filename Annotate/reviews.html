@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <input type="file" id="csvFileInput" accept=".csv">
+    <div id="main-container">
+        <div id="review-container"></div>
+        <div class="flex-row">
+            <p id="review-id">Current Page Index: <span id="current-page-index">0</span></p>
+            <div class="flex-item">
+                <button id="prev-btn">Previous</button>
+                <button id="next-btn">Next</button>
+            </div>
+        </div>
+        <div id="aspect-container"></div>
+    </div>
+    <select onchange="selectAspect()" id="aspect-picker"></select>
+    <div id="aspect-row">
+        <label for="span-input">Span:</label>
+        <input type="text" id="span-input">
+        <label for="label-input">Label:</label>
+        <select id="label-picker">
+            <option selected="selected" value="positive">positive</option>
+            <option value="negative">negative</option>
+            <option value="neutral">neutral</option>
+        </select>
+        <label for="ordinal-input">Ordinal:</label>
+        <select id="ordinal-picker">
+            <option selected="selected" value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>  
+        <button id="add-aspect-btn">Add</button>
+    </div>
+    <div id="aspects"></div>
+    <textarea id="csv-container"></textarea>
+    <script src="reviews.js"></script>
+</body>
+</html>
